@@ -17,10 +17,11 @@ img_height = 180
 img_width = 180
 
 # this part is all just to get the class names.
-dataset_url = "https://storage.googleapis.com/download.tensorflow.org/example_images/flower_photos.tgz"
-data_dir = tf.keras.utils.get_file(
-    'flower_photos', origin=dataset_url, untar=True)
-data_dir = pathlib.Path(data_dir)
+# dataset_url = "https://storage.googleapis.com/download.tensorflow.org/example_images/flower_photos.tgz"
+# data_dir = tf.keras.utils.get_file(
+#     'flower_photos', origin=dataset_url, untar=True)
+# data_dir = pathlib.Path(data_dir)
+data_dir = pathlib.Path("skin_photo")
 image_count = len(list(data_dir.glob('*/*.jpg')))
 
 train_ds = tf.keras.preprocessing.image_dataset_from_directory(
@@ -33,11 +34,14 @@ train_ds = tf.keras.preprocessing.image_dataset_from_directory(
 
 class_names = train_ds.class_names
 
-sunflower_url = "https://storage.googleapis.com/download.tensorflow.org/example_images/592px-Red_sunflower.jpg"
-sunflower_path = tf.keras.utils.get_file('Red_sunflower', origin=sunflower_url)
+# sunflower_url = "https://storage.googleapis.com/download.tensorflow.org/example_images/592px-Red_sunflower.jpg"
+# sunflower_path = tf.keras.utils.get_file('Red_sunflower', origin=sunflower_url)
+
+image_path = pathlib.Path(
+    "test_data/ISIC_seborrheic_keratosis_dermascopic_0015295.jpg")
 
 img = keras.preprocessing.image.load_img(
-    sunflower_path, target_size=(img_height, img_width)
+    image_path, target_size=(img_height, img_width)
 )
 img_array = keras.preprocessing.image.img_to_array(img)
 img_array = tf.expand_dims(img_array, 0)  # Create a batch

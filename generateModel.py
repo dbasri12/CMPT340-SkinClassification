@@ -15,7 +15,7 @@ import pathlib
 # data_dir = tf.keras.utils.get_file(
 #     'flower_photos', origin=dataset_url, untar=True)
 # data_dir = pathlib.Path(data_dir)
-data_dir = pathlib.Path("skin_photo")
+data_dir = pathlib.Path("test_data")
 image_count = len(list(data_dir.glob('*/*.jpg')))
 print(image_count)
 
@@ -114,7 +114,7 @@ model.compile(optimizer='adam',
               metrics=['accuracy'])
 
 
-epochs = 15
+epochs = 20
 model.fit(
     train_ds,
     validation_data=val_ds,

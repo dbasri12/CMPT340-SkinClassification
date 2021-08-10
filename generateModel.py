@@ -15,7 +15,7 @@ import pathlib
 # data_dir = tf.keras.utils.get_file(
 #     'flower_photos', origin=dataset_url, untar=True)
 # data_dir = pathlib.Path(data_dir)
-data_dir = pathlib.Path("skin_photo")
+data_dir = pathlib.Path("test_data")
 image_count = len(list(data_dir.glob('*/*.jpg')))
 print(image_count)
 
@@ -54,7 +54,7 @@ image_batch, labels_batch = next(iter(normalized_ds))
 first_image = image_batch[0]
 # Notice the pixels values are now in `[0,1]`.
 
-num_classes = 5
+num_classes = 3
 
 model = Sequential([
     layers.experimental.preprocessing.Rescaling(
@@ -101,6 +101,7 @@ model = Sequential([
     layers.Conv2D(32, 3, padding='same', activation='relu'),
     layers.MaxPooling2D(),
     layers.Conv2D(64, 3, padding='same', activation='relu'),
+    layers.Conv2D(128,3, padding='same',activation='relu'),
     layers.MaxPooling2D(),
     layers.Dropout(0.2),
     layers.Flatten(),
@@ -114,7 +115,7 @@ model.compile(optimizer='adam',
               metrics=['accuracy'])
 
 
-epochs = 15
+epochs = 69
 model.fit(
     train_ds,
     validation_data=val_ds,

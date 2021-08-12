@@ -29,9 +29,16 @@
             color:grey;
         }
         
+        #result p{
+            text-align: center;
+            opacity: 0;    /*Change opacity to 1 when results are available*/
+            font-size: 25px;
+            color: grey;
+        }
+
         #imageResults{
             padding: 6;
-            opacity: 0;
+            opacity: 0;     /*Change opacity to 1 when image results are available*/  
             margin-left: auto;
             margin-right: auto;
             margin-top: 10px;
@@ -44,6 +51,16 @@
             vertical-align: middle;
         }
 
+        .explanation p{
+            color: grey;
+            font-size: 30px;
+            text-align: center;
+        }
+
+        form{
+            text-align: center;
+        }
+
     </style>
 	<body>
 		<div class="header">
@@ -54,10 +71,19 @@
             <p>A free tool that checks skin conditions and finds similar images.</p>
         </div>
 
+        <div id="result">
+            <p>placeholder result</p>
+        </div>
+
         <div id="imageResults">
             <img src="https://via.placeholder.com/200.png" hspace="10"/>
             <img src="https://via.placeholder.com/200.png" hspace="10"/>
         </div>
+        <div class="explanation">
+            <p>Upload an image and try it out</p>
+        </div>
+        
+
         <form action="/action_page.php">
             <label for="img">Select image:</label>
             <input type="file" id="img" name="img" accept="image/*">

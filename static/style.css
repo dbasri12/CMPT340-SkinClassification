@@ -1,0 +1,118 @@
+* {
+  	box-sizing: border-box;
+  	font-family: sans-serif;
+  	font-size: 18px;
+}
+body {
+  	background-color: #eb7a34;
+  	margin: 0;
+}
+.login, .register{
+  	width: 400px;
+  	background-color: #ffffff;
+  	margin: 100px auto;
+}
+.login h1, .register h1{
+  	text-align: center;
+  	color: #000000;
+  	font-size: 28px;
+  	padding: 15px 0 15px 0;
+  	border-bottom: 1px solid #ffffff;
+}
+.login .links, .register .links{
+  	display: flex;
+  	padding: 0 15px;
+}
+.login .links a, .register .links a {
+  	color: #adb2ba;
+  	text-decoration: none;
+  	display: inline-flex;
+  	padding: 0 10px 10px 10px;
+  	font-weight: bold;
+}
+.login .links a.active, .register .links a.active {
+  	border-bottom: 3px solid #3274d6;
+  	color: #000000;
+}
+.login form, .register form {
+  	display: flex;
+  	flex-wrap: wrap;
+  	justify-content: center;
+  	padding-top: 20px;
+}
+.login form label, .register form label {
+  	display: flex;
+  	justify-content: center;
+  	align-items: center;
+  	width: 50px;
+  	height: 50px;
+  	background-color: #000000;
+  	color: #ffffff;
+}
+.login form input[type="password"], .login form input[type="text"], .login form input[type="email"], .register form input[type="password"], .register form input[type="text"], .register form input[type="email"] {
+  	width: 315px;
+  	height: 50px;
+  	border: 1px solid #000000;
+  	margin-bottom: 20px;
+  	padding: 0 15px;
+}
+.login form input[type="submit"], .register form input[type="submit"] {
+  	width: 100%;
+  	padding: 15px;
+  	margin-top: 20px;
+  	background-color: #000000;
+  	border: 0;
+  	cursor: pointer;
+  	font-weight: bold;
+  	color: #ffffff;
+  	transition: background-color 0.2s;
+}
+.navtop {
+  	background-color: #000000;
+  	height: 60px;
+  	width: 100%;
+  	border: 0;
+}
+.navtop div {
+  	display: flex;
+  	margin: 0 auto;
+  	width: 1000px;
+  	height: 100%;
+}
+.navtop div h1, .navtop div a {
+  	display: inline-flex;
+  	align-items: center;
+}
+.navtop div h1 {
+  	flex: 1;
+  	font-size: 28px;
+  	padding: 10;
+ 	  margin: 10;
+  	color: #eaebed;
+  	font-weight: bold;
+}
+.navtop div a {
+  	padding: 0 20px;
+  	text-decoration: none;
+  	color: #c1c4c8;
+  	font-weight: bold;
+}
+.navtop div a i {
+  	padding: 2px 8px 0 0;
+}
+
+body.loggedin {
+  	background-color: #000000;
+}
+.content {
+  	width: 1000px;
+  	margin: 0 auto;
+}
+.content h2 {
+  	margin: 0;
+  	padding: 25px 0;
+  	font-size: 22px;
+  	border-bottom: 1px solid #ffffff;
+  	color: #ffffff;
+}
+

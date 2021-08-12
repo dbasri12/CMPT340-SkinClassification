@@ -7,12 +7,9 @@ from flask import(
 	request,
 	flash
 	)
-import helperfunctions
 
 
 app = Flask(__name__)
-
-app.secret_key = str(helperfunctions.sessionID())
 
 @app.route("/")
 def direct():

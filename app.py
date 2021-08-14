@@ -63,7 +63,6 @@ def home():
 		prediction = str(class_names[np.argmax(score)])
 		predictionPercent = str(round(100*np.max(score)))
 		predictionMessage = "The skin condition is diagnosed as "+prediction+" with a "+predictionPercent+" percent confidence."
-		#print("{} {:.2f}".format(class_names[np.argmax(score)], 100*np.max(score)))
 
 		#Render Template
 		full_filename = os.path.join(app.config['USER_INPUT'], filename)

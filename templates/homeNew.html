@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Find My Skin</title>
+	</head>
+	<style>
+        body{
+            background-color: #f7fbfc;
+        }
+    	.header{
+        	padding-left: 20px;
+            padding-right:20px;
+            padding-top: 4px;
+            padding-bottom: 4px;
+            background: #0f86db;
+            width: 100%;
+            height: auto;
+        }
+        .header h1{
+            color: aliceblue;
+            font-size: 50px;
+            text-align: center;
+        }
+
+        .info p{
+            font-size: 25px;
+            text-align: center;
+            color:grey;
+        }
+
+        .imgbox {
+            display: grid;
+            height: 50%;
+        }
+
+        .img-center-fit {
+            max-width: 100%;
+            max-height: 50vh;
+            margin: auto;
+        }
+
+        .results {
+            max-width: 50%;
+            max-height: 50vh;
+            font-size: 25px;
+            color:grey;
+            margin: auto;
+        }
+
+        #result p{
+            text-align: center;
+            text-decoration: underline;
+            opacity: 0;    /*Change opacity to 1 when results are available*/
+            font-size: 25px;
+            color: grey;
+        }
+
+        #imageResults{
+            padding: 6;
+            opacity: 0;     /*Change opacity to 1 when image results are available*/  
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        #imageMain img{
+            height: 300;
+            width: 300;
+            vertical-align: middle;
+        }
+
+        .explanation p{
+            color: grey;
+            font-size: 30px;
+            text-align: center;
+        }
+
+        form{
+            text-align: center;
+        }
+
+    </style>
+	<body>
+		<div class="header">
+        	<h1> Check My Skin </h1>
+        </div>
+
+        <div class="info">
+            <p>A free tool that checks skin conditions and finds similar images.</p>
+        </div>
+
+        <div id="result">
+            <p>placeholder result</p>
+        </div>
+
+        {% if img %}
+        <div class="imgbox">
+            <p class="results">Your Input:</p>
+            <img class="img-center-fit" src="{{ img }}" alt="Image">
+            <div class="results">{{ prediction }}</div>
+        </div>
+        <div id="imageResults">
+            <img src="https://via.placeholder.com/280.png" hspace="10"/>
+            <img src="https://via.placeholder.com/280.png" hspace="10"/>
+            <img src="https://via.placeholder.com/280.png" hspace="10"/>
+        </div>
+        <form action="{{ url_for('home') }}" method="get">
+            <input type="submit" value="Go Back">
+        </form>
+        {% else %}
+        <div class="explanation">
+            <p>Upload an image and try it out</p>
+        </div>
+
+        <form action="{{ url_for('home') }}" method="post" enctype="multipart/form-data">
+            <label for="img">Select image:</label>
+            <input type="file" name="file" class="form-control" autocomplete="off" required>
+            <input type="submit" value="Submit">
+        </form>
+        {% endif %}
+	</body>
+</html>

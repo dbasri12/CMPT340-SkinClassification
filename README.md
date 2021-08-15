@@ -21,6 +21,6 @@ $ flask run
 The website should now be running on local host port 5000 by default: http://localhost:5000
 
 ## Usage
-1\. Click Choose File button and open an image of a skin disease
-2\. Click submit
+1\. Click Choose File button and open an image of a skin disease <br />
+2\. Click submit <br />
 3\. Wait for results

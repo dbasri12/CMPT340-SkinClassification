@@ -26,7 +26,7 @@ def load_image(path):
 feat_extractor = Model(inputs=model.input, outputs=model.get_layer("fc2").output)
 
 #This is where you load user image
-user_img, x = load_image("newtest\ISIC_melanoma_dermascopic_0000002.jpg")
+user_img, x = load_image("newtest\ISIC_melanoma_dermascopic_0015204.jpg")
 new_features = feat_extractor.predict(x)
 
 

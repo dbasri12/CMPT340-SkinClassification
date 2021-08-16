@@ -40,6 +40,18 @@
             margin: auto;
         }
 
+        .column {
+            float: left;
+             width: 32%;
+             padding: 5px;
+        }
+
+        .row::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+
         .results {
             max-width: 50%;
             max-height: 50vh;
@@ -58,7 +70,7 @@
 
         #imageResults{
             padding: 6;
-            opacity: 0;     /*Change opacity to 1 when image results are available*/  
+            opacity: 1;     /*Change opacity to 1 when image results are available*/  
             margin-left: auto;
             margin-right: auto;
             margin-top: 10px;
@@ -91,25 +103,38 @@
             <p>A free tool that checks skin conditions and finds similar images.</p>
         </div>
 
-        <div id="result">
-            <p>placeholder result</p>
-        </div>
-
         {% if img %}
         <div class="imgbox">
             <p class="results">Your Input:</p>
             <img class="img-center-fit" src="{{ img }}" alt="Image">
             <div class="results">{{ prediction }}</div>
         </div>
-        <div id="imageResults">
-            <img src="https://via.placeholder.com/280.png" hspace="10"/>
-            <img src="https://via.placeholder.com/280.png" hspace="10"/>
-            <img src="https://via.placeholder.com/280.png" hspace="10"/>
+        <div id="result">
+            <p>placeholder result</p>
         </div>
+        <p class="results">Your Input shares simularities with the following photos from our database</p>
+        <div class="row">
+            <div class="column">
+                <img class="results-center-fit" src="{{ result1 }}" style="width:90%"/>
+                <div class="results">{{ text1 }}</div>
+            </div>
+            <div class="column">
+                <img class="results-center-fit" src="{{ result2 }}" style="width:90%"/>
+                <div class="results">{{ text2 }}</div>
+            </div>
+            <div class="column">
+                <img class="results-center-fit" src="{{ result3 }}" style="width:90%"/>
+                <div class="results">{{ text3 }}</div>
+
+            </div>
+          </div>
         <form action="{{ url_for('home') }}" method="get">
             <input type="submit" value="Go Back">
         </form>
         {% else %}
+        <div id="result">
+            <p>placeholder result</p>
+        </div>
         <div class="explanation">
             <p>Upload an image and try it out</p>
         </div>

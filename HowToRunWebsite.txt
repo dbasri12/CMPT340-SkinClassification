@@ -4,6 +4,13 @@ Download the following libaries
 	c. os
 	d. werkzerg
 	e. numpy
+	f. scipy
+	g. sklearn
+	h. random
+	i. os
+	j. time
+	k. matplostlib
+	l. PIL
 
 Extract the dataset into a folder named dataset inside static such that the photos can be accessed like:
 ./static/dataset/<filename>

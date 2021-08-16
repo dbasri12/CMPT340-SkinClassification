@@ -9,7 +9,6 @@ from flask import(
 	)
 import numpy as np
 import tensorflow as tf
-import keras
 from numpy.core.defchararray import asarray
 from tensorflow import keras
 from tensorflow.keras import layers
@@ -24,11 +23,7 @@ import random
 import os
 from werkzeug.utils import secure_filename
 import time
-import matplotlib.pyplot as plt
 from math import dist
-import io
-from PIL import Image
-from flask import Response
 
 app = Flask(__name__)
 

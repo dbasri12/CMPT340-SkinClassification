@@ -21,4 +21,4 @@ The following steps are used to run the code.
 3. set app as flask ($env:FLASK_APP="app.py")
 4. run flask (flask run)
 5. Go to browser and enter the local address given on the powershell screen (127.0.0...)
-6. Site should appear with the login page.
+6. Site should appear.

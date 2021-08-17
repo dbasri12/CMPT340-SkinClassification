@@ -9,7 +9,7 @@ $ python get-pip.py
 2\. Install necessary libraries
 ```
 $ pip install --upgrade pip
-$ pip install Flask flask_mysqldb mysqlclient scipy sklearn tensorflow numpy Werkzeug
+$ pip install -r requirements.txt
 ```
 3\. To deploy the website locally, run
 ```

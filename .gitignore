@@ -2,8 +2,5 @@
 .vscode/*
 __pycache__
 
-<<<<<<< HEAD
 static/*
-=======
-static/*
->>>>>>> 05a0ebae836367525a7621db8776760ca30886e3
+
